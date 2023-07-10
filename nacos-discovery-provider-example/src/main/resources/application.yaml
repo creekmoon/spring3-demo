@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 30001
 
 spring:
   application:
@@ -7,10 +7,12 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 183.63.187.149:8848,183.63.187.149:8858,183.63.187.149:8868
+        server-addr: 43.138.210.151:8848
         enabled: true
         username: nacos
         password: nacos
+    inetutils:
+      preferred-networks: ${PREFERRED_NETWORKS:.*}
 management:
   endpoints:
     web:
@@ -19,3 +21,20 @@ management:
   endpoint:
     health:
       show-details: always
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.alibaba.cloud.examples
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
