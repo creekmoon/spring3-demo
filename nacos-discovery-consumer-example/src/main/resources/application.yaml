@@ -1,17 +1,18 @@
 server:
   port: 30000
+management:
+  endpoints:
+    web:
+      base-path: /unsafe-actuator
+      exposure:
+        include: info,health,prometheus
 spring:
   application:
     name: service-consumer
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: "*"
   cloud:
     nacos:
       discovery:
-        server-addr: ${NACOS-ADDRESS:43.138.210.151:8848}
+        server-addr: ${NACOS-ADDRESS:183.63.187.149:8848}
         enabled: true
         username: nacos
         password: nacos

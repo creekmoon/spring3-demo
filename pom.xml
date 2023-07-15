@@ -38,11 +38,19 @@
     </dependencies>
     <dependencyManagement>
         <dependencies>
+            <!--国产swagger替代-->
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
                 <version>4.1.0</version>
             </dependency>
+            <!-- spring官方已经对其进行了适配  开启prometheus监控端点的标准实现 需要配合actuator使用 -->
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-registry-prometheus</artifactId>
+                <version>1.11.2</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
