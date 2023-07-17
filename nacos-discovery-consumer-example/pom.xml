@@ -32,6 +32,11 @@
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
+        <!--普罗米修斯 拓展依赖-->
+        <dependency>
+            <groupId>io.github.mweirauch</groupId>
+            <artifactId>micrometer-jvm-extras</artifactId>
+        </dependency>
         <!--配置文件解析器-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
