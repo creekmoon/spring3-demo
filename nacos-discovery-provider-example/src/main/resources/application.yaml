@@ -1,23 +1,25 @@
 server:
   port: 30001
-management:
-  endpoints:
-    web:
-      base-path: /unsafe-actuator
-      exposure:
-        include: info,health,prometheus
+
 spring:
   application:
     name: service-provider
   cloud:
     nacos:
       discovery:
-        server-addr: ${NACOS-ADDRESS:175.178.29.217:8848,175.178.29.217:8858,175.178.29.217:8868}
+        server-addr: ${NACOS-ADDRESS:111.230.58.235:8848,111.230.58.235:8858,111.230.58.235:8868}
         enabled: true
         username: nacos
         password: nacos
     inetutils:
       preferred-networks: ${PREFERRED_NETWORKS:.*}
+
+management:
+  endpoints:
+    web:
+      base-path: /unsafe-actuator
+      exposure:
+        include: info,health,prometheus
 
 # springdoc-openapi项目配置
 springdoc:

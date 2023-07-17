@@ -6,13 +6,17 @@ management:
       base-path: /unsafe-actuator
       exposure:
         include: info,health,prometheus
+  metrics:
+    export:
+      tags:
+        application: ${spring.application.name}
 spring:
   application:
     name: service-consumer
   cloud:
     nacos:
       discovery:
-        server-addr: ${NACOS-ADDRESS:183.63.187.149:8848}
+        server-addr: ${NACOS-ADDRESS:175.178.29.217:8848,175.178.29.217:8858,175.178.29.217:8868}
         enabled: true
         username: nacos
         password: nacos
